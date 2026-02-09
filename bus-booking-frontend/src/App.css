@@ -1,0 +1,260 @@
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f2f5; /* ලා අළු පාට පසුබිමක් */
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+  background: linear-gradient(90deg, #000428 0%, #004e92 100%); /* නිල් පාට Gradient එකක් */
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.navbar h2 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.nav-buttons button {
+  margin-left: 10px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* --- Login / Register Containers --- */
+.auth-container {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  max-width: 400px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.auth-container input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  transition: 0.3s;
+}
+
+.auth-container input:focus {
+  border-color: #004e92;
+  outline: none;
+}
+
+/* --- Buttons --- */
+button {
+  cursor: pointer;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.btn-primary { background: #004e92; color: white; }
+.btn-success { background: #28a745; color: white; }
+.btn-danger { background: #dc3545; color: white; }
+.btn-admin { background: #6f42c1; color: white; }
+.btn-secondary { background: #6c757d; color: white; }
+
+/* --- Search Section --- */
+.search-box {
+  background: white;
+  padding: 30px;
+  margin: 30px auto;
+  max-width: 800px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.search-box input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  flex: 1;
+}
+
+/* --- Bus Cards --- */
+.bus-card {
+  background: white;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 5px solid #004e92;
+  transition: 0.3s;
+}
+
+.bus-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.bus-info h3 { margin: 0 0 5px; color: #004e92; }
+.bus-info p { margin: 2px 0; color: #666; font-size: 14px; }
+
+.price-tag {
+  text-align: right;
+}
+
+.price-tag h3 {
+  color: #28a745;
+  margin-bottom: 10px;
+}
+
+/* --- Seat Map --- */
+.seat-container {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.seat-btn {
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* --- Loading Spinner --- */
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* --- Mobile View Adjustments (Phone එකට ගැලපෙන විදියට) --- */
+
+@media (max-width: 768px) {
+  /* Navigation Bar එකේ Layout එක වෙනස් කිරීම */
+  .navbar {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .nav-buttons {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .nav-buttons button {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  /* Search Box එක එක පේළියට ගැනීම */
+  .search-box {
+    flex-direction: column;
+    padding: 15px;
+    margin: 15px;
+  }
+
+  .search-box input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /* Bus Card එක තීරු දෙකක් වෙනුවට එකක් කිරීම */
+  .bus-card {
+    flex-direction: column;
+    text-align: center;
+    margin: 15px;
+    border-left: none;
+    border-top: 5px solid #004e92;
+  }
+
+  .price-tag {
+    text-align: center;
+    margin-top: 15px;
+    width: 100%;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+  }
+
+  /* Seat Map එක Phone එකේදී පොඩි කිරීම */
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr); /* තීරු 4ම තියනවා, හැබැයි ඉඩ පිරිමසනවා */
+    gap: 8px;
+  }
+
+  .seat-btn {
+    padding: 10px 5px;
+    font-size: 11px;
+  }
+
+  /* Admin Panel එකේ Columns එක යටට එකක් ගැනීම */
+  .admin-flex {
+    flex-direction: column !important;
+  }
+
+  .auth-container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  
+  /* Ticket එකේ size එක adjust කිරීම */
+  .ticket-box {
+    width: 95% !important;
+    padding: 20px !important;
+  }
+}
